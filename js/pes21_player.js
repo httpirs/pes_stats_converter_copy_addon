@@ -1482,6 +1482,39 @@ False;\
   }
 
   FromPESMasterPlayer(pesMasterPlayer) {
+    this.positions = pesMasterPlayer.positions;
+    this.registeredPosition = pesMasterPlayer.info["Position"];
+    this.name = pesMasterPlayer.name;
+    this.shirtName = this.NameToShirtName(this.name);
+    this.age = parseInt(pesMasterPlayer.info["Age"]);
+    this.nation = pesMasterPlayer.info["Nationality"];
+    this.nationality = pesMasterPlayer.info["Nationality"] in pesIndieNationalities ? pesIndieNationalities[pesMasterPlayer.info["Nationality"]] : "Free Nationality";
+    this.offensiveAwareness = pesMasterPlayer.stats["Offensive Awareness"];
+    this.ballControl = pesMasterPlayer.stats["Ball Control"];
+    this.tightPossession = pesMasterPlayer.stats["Tight Possession"];
+    this.dribbling = pesMasterPlayer.stats["Dribbling"];
+    this.lowPass = pesMasterPlayer.stats["Low Pass"];
+    this.loftedPass = pesMasterPlayer.stats["Lofted Pass"];
+    this.finishing = pesMasterPlayer.stats["Finishing"];
+    this.placeKicking = pesMasterPlayer.stats["Set Piece Taking"];
+    this.curl = pesMasterPlayer.stats["Curl"];
+    this.heading = pesMasterPlayer.stats["Heading"];
+    this.defensiveAwareness = pesMasterPlayer.stats["Defensive Awareness"];
+    this.ballWinning = Math.round(Average([pesMasterPlayer.stats["Tackling"], pesMasterPlayer.stats["Defensive Engagement"]);
+    this.aggression = pesMasterPlayer.stats["Aggression"];
+    this.kickingPower = pesMasterPlayer.stats["Kicking Power"];
+    this.speed = pesMasterPlayer.stats["Speed"];
+    this.acceleration = pesMasterPlayer.stats["Acceleration"];
+    this.physicalContact = pesMasterPlayer.stats["Physical Contact"];
+    this.balance = pesMasterPlayer.stats["Balance"];
+    this.jump = pesMasterPlayer.stats["Jumping"];
+    this.stamina = pesMasterPlayer.stats["Stamina"];
+    this.gkAwareness = pesMasterPlayer.stats["GK Awareness"];
+    this.gkReach = pesMasterPlayer.stats["GK Reach"];
+    this.gkCatching = pesMasterPlayer.stats["GK Catching"];
+    this.gkClearing = pesMasterPlayer.stats["GK Parrying"];
+    this.gkReflexes = pesMasterPlayer.stats["GK Reflexes"];
+
     return "";
   }
 }
